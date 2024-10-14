@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        #about {
+            padding: 20px;
+        }
+
+        .message-box {
+            background-color: crimson;
+            /* White background for the boxes */
+            border-radius: 8px;
+            /* Rounded corners */
+            padding: 15px;
+            /* Padding inside the box */
+            margin: 10px 0;
+            /* Margin between boxes */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for depth */
+            position: relative;
+            /* For positioning elements inside */
+            overflow: hidden;
+            /* Ensure child elements don't overflow */
+        }
+
+        .option1 {
+            background-color: #007bff;
+            /* Blue background for Option 1 */
+            color: white;
+            /* White text */
+        }
+
+        .option2 {
+            background-color: #343a40;
+            /* Dark gray background for Option 2 */
+            color: white;
+            /* White text */
+        }
+
+        .option3 {
+            background-color: #28a745;
+            /* Green background for Option 3 */
+            color: white;
+            /* White text */
+        }
+
+        .conclusion {
+            background-color: #ffc107;
+            /* Yellow background for Conclusion */
+            color: white;
+            /* White text */
+        }
+
+        .conclusion2 {
+            background-color: dimgray;
+            color: #f9f9f9;
+        }
+
+        h3 {
+            margin-top: 0;
+            /* Remove margin from the top */
+        }
+
+        p {
+            margin: 0;
+            /* Remove default paragraph margin */
+        }
+
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff99cc, #ffcc99);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        /* Styles for scroll section */
+        .scroll-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .scroll-down {
+            font-size: 2em;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+        }
+
+        .scroll-text {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Section styles */
+        section {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 800px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            background: #ffcc99;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+
+        #gallery {
+            padding: 40px;
+            /* Increased padding for a more spacious layout */
+            background-color: #f7f7f7;
+            /* Light background for contrast */
+            text-align: center;
+            /* Center the heading */
+            position: relative;
+            /* For absolute positioning of the effect */
+        }
+
+        h2 {
+            font-family: 'Arial', sans-serif;
+            /* Font for the heading */
+            font-size: 2.5rem;
+            /* Larger font size for impact */
+            color: #333;
+            /* Dark color for the text */
+            margin-bottom: 20px;
+            /* Space below the heading */
+        }
+
+        .gallery-container {
+            display: flex;
+            /* Use flexbox for a responsive layout */
+            flex-wrap: wrap;
+            /* Allow items to wrap to the next line */
+            justify-content: center;
+            /* Center the items */
+            gap: 15px;
+            /* Space between images */
+            margin-top: 20px;
+            /* Space above the gallery */
+        }
+
+        .gallery-item {
+            width: 250px;
+            /* Fixed width for images */
+            height: 200px;
+            /* Fixed height for images */
+            border-radius: 15px;
+            /* Rounded corners for images */
+            object-fit: contain;
+            /* Ensure the entire image is visible */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Shadow for depth */
+            transition: transform 0.3s, box-shadow 0.3s;
+            /* Smooth transition for effects */
+            background-color: #fff;
+            /* White background to fill the area */
+            display: flex;
+            /* Center content */
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            /* Ensure the image fits within the container */
+            max-height: 100%;
+            /* Ensure the image fits within the container */
+            border-radius: 15px;
+            /* Rounded corners for images */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            /* Slight zoom effect on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            /* Deeper shadow on hover */
+        }
+
+        .gallery-item:nth-child(odd) {
+            filter: brightness(0.9);
+            /* Slightly dim odd images */
+        }
+
+        .gallery-item:nth-child(even) {
+            filter: brightness(1.1);
+            /* Slightly brighten even images */
+        }
+
+
+
+        #messages {
+            padding: 40px;
+            /* Increased padding for a spacious layout */
+            background: #e0f7fa;
+            /* Background color */
+            text-align: center;
+            /* Center-align the heading and content */
+        }
+
+        h2 {
+            font-family: 'Arial', sans-serif;
+            /* Font for the heading */
+            font-size: 2.5rem;
+            /* Larger font size for impact */
+            color: #333;
+            /* Dark color for the text */
+            margin-bottom: 20px;
+            /* Space below the heading */
+        }
+
+        .video-container {
+            display: flex;
+            /* Use flexbox for a responsive layout */
+            flex-wrap: wrap;
+            /* Allow items to wrap to the next line */
+            justify-content: center;
+            /* Center the items */
+            gap: 20px;
+            /* Space between videos */
+            margin-top: 20px;
+            /* Space above the video container */
+        }
+
+        .message-video {
+            width: 200px;
+            /* Smaller width for regular videos */
+            height: auto;
+            /* Maintain aspect ratio */
+            border-radius: 10px;
+            /* Rounded corners for videos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Shadow for depth */
+            transition: transform 0.3s, box-shadow 0.3s;
+            /* Smooth transition for effects */
+            cursor: pointer;
+            /* Change cursor to pointer on hover */
+        }
+
+        .message-video.expanded {
+            width: 600px;
+            /* Larger width when expanded */
+            height: auto;
+            /* Maintain aspect ratio */
+            z-index: 1;
+            /* Bring expanded video to front */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            /* Deeper shadow on expand */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Happy Birthday SUMA</h1>
+        <p>Maybe it's late for the gift, but i think it's worth waiting for !</p>
+    </header>
+
+    <!-- New scroll section -->
+    <section id="scroll-section" style="margin-top: 50px;">
+        <div class="scroll-container">
+            <p class="scroll-text">Keep scrolling for something special</p>
+            <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+                ⬇️
+            </div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <h2>About Suma</h2>
+
+        <div class="message-box option1">
+            <p>"I’m not even sure where to begin… It took us so many years to finally be together, and I still can't
+                fully understand why you love me as deeply as you do, despite everything I’ve done."</p>
+        </div>
+
+        <div class="message-box option2">
+            <p>As a woman, I’ve never met anyone like you—bold, brave, and incredibly responsible. You’ve faced
+                countless challenges from a young age and have overcome them all with such grace and courage. Keep being
+                that strong, fearless person for the rest of your life.</p>
+        </div>
+
+        <div class="message-box option3">
+            <p>You inspire me every day, not just with your strength but with your kindness. Even in the toughest
+                moments, you’ve shown how to love unconditionally, how to stand tall, and how to remain hopeful.You
+                stand strong no matter the obstacles in your way. You never give up and always show enough courage to
+                handle things on your own without seeking help from others.</p>
+        </div>
+
+        <div class="message-box conclusion">
+            <p>I am so grateful for the way you support me, for always understanding even when I make mistakes, and for
+                being the steady presence I need. You’ve taught me that love is more than just words or moments—it's a
+                constant commitment, a choice we make every day, and I feel so lucky that you choose me.</p>
+        </div>
+
+        <div class="message-box">
+            <p>You deserve all the happiness in the world, and I’ll do everything I can to make sure you get it. Be
+                brave like you’ve always been—because you’re the bravest, most beautiful person I know."</p>
+        </div>
+        <div class="message-box conclusion2">
+            <p>You've faced all your challenges and obstacles alone until now, but from this point forward, I will be
+                here for you, no matter what the situation is or what you're going through.</p>
+        </div>
+    </section>
+
+
+
+
+    <!-- Gallery section -->
+    <section id="gallery">
+        <h2>OUR MEMORIES</h2>
+
+        <div class="gallery-container">
+            <img src="C:\Users\avinash\Downloads\IMG_5434.PNG" alt="Memory 1" class="gallery-item">
+            <img src="C:\Users\avinash\Downloads\IMG_4738.PNG" alt="Memory 2" class="gallery-item">
+            <img src="C:\Users\avinash\Downloads\IMG_3687.JPG" alt="Memory 3" class="gallery-item">
+            <img src="c:\Users\avinash\Downloads\IMG_3686.JPG" alt="Memory 4" class="gallery-item">
+
+        </div>
+    </section>
+
+
+    <!-- Messages section -->
+
+    <section id="messages" style="background: #e0f7fa; padding: 40px; text-align: center;">
+        <h2>Wishes from Friends & Family</h2>
+
+        <div class="video-container">
+            <video controls class="message-video" onclick="toggleVideo(this)">
+                <source src="C:\Users\avinash\Downloads\9914ddc4-8204-41a1-a862-168b3763588e.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video controls class="message-video" onclick="toggleVideo(this)">
+                <source src="C:\Users\avinash\Downloads\b483154e-cbdd-415d-b387-8decdcf6bcf8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video controls class="message-video" onclick="toggleVideo(this)">
+                <source src="C:\Users\avinash\Downloads\357fe5fd-0c52-496f-935e-975e9c67af86.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video controls class="message-video" onclick="toggleVideo(this)">
+                <source src="C:\Users\avinash\Downloads\9c890612-efb3-4a23-a291-4e991b2d1e6d.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video controls class="message-video" onclick="toggleVideo(this)">
+                <source src="C:\Users\avinash\Downloads\1f8e14a4-ba61-42a2-aec1-ef3e3c9a9791.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video controls class="message-video" onclick="toggleVideo(this)">
+                <source src="C:\Users\avinash\Downloads\69c5df23-58a1-4bd9-ab94-0853f44efbd1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video controls class="message-video" onclick="toggleVideo(this)">
+                <source src="C:\Users\avinash\Downloads\86fe8b43-84ef-443d-846b-8861dee15555.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video controls class="message-video" onclick="toggleVideo(this)">
+                <source src="C:\Users\avinash\Downloads\059cb564-0ec4-4375-9fb8-f04b82e9ea7c.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
